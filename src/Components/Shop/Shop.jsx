@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
 import Hero from "../Hero/Hero";
 import Navbar from "../Navbar/Navbar";
@@ -19,10 +19,10 @@ const Shop = () => {
 
   let products = [
     {
-      name: "Urbano Jacket",
+      name: "Spring Jacket",
       stars: 5,
       brand: "watchmenow",
-      price: 99,
+      price: 55,
     },
     {
       name: "Urbano Jacket",
@@ -40,7 +40,7 @@ const Shop = () => {
       name: "Urbano Jacket",
       stars: 4,
       brand: "watchmenow",
-      price: 99,
+      price: 30,
     },
     {
       name: "Urbano Jacket",
@@ -56,15 +56,19 @@ const Shop = () => {
     },
   ];
 
+  products.sort((a, b) => a.price - b.price);
+
+  const [rangeVal, setRangeVal] = useState(0);
+  const [searchValue, setSearchValue] = useState("");
+  const [productSearch, setProductSearch] = useState("");
+
   const navigate = useNavigate("");
 
   const Stars = ({ count }) => {
     const stars = [];
-
     for (let i = 0; i < count; i++) {
       stars.push(<img src={star_icon} alt="" />);
     }
-
     return stars;
   };
   return (
@@ -78,8 +82,18 @@ const Shop = () => {
               type="text"
               className="filter-search"
               placeholder="Search products"
+              onChange={(e) => {
+                setSearchValue(e.target.value);
+              }}
             />
-            <img src={search_icon} alt="" />
+            <img
+              src={search_icon}
+              alt=""
+              onClick={() => {
+                setProductSearch(searchValue);
+                console.log(searchValue);
+              }}
+            />
           </div>
           <div className="shop-filter-price">
             <div className="price-filter-top">
@@ -88,11 +102,21 @@ const Shop = () => {
             </div>
             {/* price range thing */}
             <div className="price-filter">
-              <input type="range" className="input-range" />
+              <input
+                type="range"
+                className="input-range"
+                min="5"
+                max="99"
+                value={rangeVal}
+                onChange={(e) => {
+                  setRangeVal(e.target.value);
+                }}
+              />
+              <div className="range-label">Value: ${rangeVal}</div>
             </div>
             <div className="price-filer-range">
               <p className="range-title">Range</p>
-              <p className="range-numbers">$5-20</p>
+              <p className="range-numbers">$5-99</p>
             </div>
           </div>
           <div className="product-categories-container">
@@ -169,31 +193,37 @@ const Shop = () => {
           </div>
         </div>
         <div className="shop-product-cards-container">
-          {products.map((product, key) => {
-            return (
-              <div
-                className="shop-product-card"
-                onClick={() => {
-                  navigate("/product/" + key);
-                }}
-              >
-                <div className="product-card-top">
-                  <div className="image-div"></div>
-                  <div className="heart-icon" onClick={() => {}}>
-                    <img src={orange_heart} alt="" />
+          <div className="shop-product-cards-inner">
+            {products.map((product, key) => {
+              return (
+                product.price >= rangeVal &&
+                product.name.toLowerCase().includes(productSearch) && (
+                  <div
+                    key={key}
+                    className="shop-product-card"
+                    onClick={() => {
+                      navigate("/product/" + key);
+                    }}
+                  >
+                    <div className="product-card-top">
+                      <div className="image-div"></div>
+                      <div className="heart-icon" onClick={() => {}}>
+                        <img src={orange_heart} alt="" />
+                      </div>
+                    </div>
+                    <div className="product-card-bottom">
+                      <div className="product-heading">{product.name}</div>
+                      <div className="product-rating">
+                        <Stars count={product.stars} />
+                      </div>
+                      <div className="product-brand">{product.brand}</div>
+                      <div className="product-price">${product.price}</div>
+                    </div>
                   </div>
-                </div>
-                <div className="product-card-bottom">
-                  <div className="product-heading">{product.name}</div>
-                  <div className="product-rating">
-                    <Stars count={product.stars} />
-                  </div>
-                  <div className="product-brand">watchmenow</div>
-                  <div className="product-price">$99</div>
-                </div>
-              </div>
-            );
-          })}
+                )
+              );
+            })}
+          </div>
           <div className="see-more">
             <button className="see-more-btn">See More</button>
           </div>

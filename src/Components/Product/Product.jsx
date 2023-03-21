@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
 import Hero from "../Hero/Hero";
 import Navbar from "../Navbar/Navbar";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 // Images
 import star_icon from "../../Source/product-star.png";
 import orange_heart_icon from "../../Source/heart-orange.png";
@@ -12,9 +12,8 @@ import Slider from "react-slick";
 import "../../Styling/Product.scss";
 
 const Product = () => {
-  let quantity = 3;
-  let total = 10;
-  let price = 99;
+  // let quantity = 3;
+  const navigate = useNavigate();
 
   let settings = {
     dots: true,
@@ -22,12 +21,13 @@ const Product = () => {
     arrows: false,
     infinite: false,
   };
+
   let products = [
     {
-      name: "Urbano Jacket",
+      name: "Spring Jacket",
       stars: 5,
       brand: "watchmenow",
-      price: 99,
+      price: 55,
     },
     {
       name: "Urbano Jacket",
@@ -45,7 +45,7 @@ const Product = () => {
       name: "Urbano Jacket",
       stars: 4,
       brand: "watchmenow",
-      price: 99,
+      price: 30,
     },
     {
       name: "Urbano Jacket",
@@ -60,6 +60,11 @@ const Product = () => {
       price: 99,
     },
   ];
+
+  products.sort((a, b) => a.price - b.price);
+
+  const [quantity, setQuantity] = useState(1);
+
   let url = useParams();
   let productId = url.id;
 
@@ -129,22 +134,45 @@ const Product = () => {
               <div className="product-quantity">
                 <p className="product-label">Quantity</p>
                 <div className="product-quantity-btns">
-                  <button className="decreaseQuantity">-</button>
+                  <button
+                    className="decreaseQuantity"
+                    onClick={() => {
+                      if (quantity > 1) {
+                        setQuantity(quantity - 1);
+                      }
+                    }}
+                  >
+                    -
+                  </button>
                   <div className="quantity">{quantity}</div>
-                  <button className="increaseQuantity">+</button>
+                  <button
+                    className="increaseQuantity"
+                    onClick={() => {
+                      if (quantity < 20) {
+                        setQuantity(quantity + 1);
+                      }
+                    }}
+                  >
+                    +
+                  </button>
                 </div>
                 <button className="add-note-btn">Add note</button>
               </div>
               <div className="product-total">
                 <p className="product-label">Sub Total</p>
-                <p className="total">${total}</p>
+                <p className="total">${products[productId].price * quantity}</p>
               </div>
               <div className="product-cart-buttons">
                 <button className="wishlist">
                   <p>Wishlist</p>
                   <img src={orange_heart_icon} alt="" />
                 </button>
-                <button className="addToCart">
+                <button
+                  className="addToCart"
+                  onClick={() => {
+                    navigate("/cart");
+                  }}
+                >
                   <p>Add to Cart</p>
                   <img src={shopping_cart_white} alt="" />
                 </button>
