@@ -2,6 +2,10 @@ $brand-color: #f86338;
 $darker-brand-color: #e3471c;
 $link-color: #11142d;
 $light-blue-background: #eff4fe;
+$small-screen: 767px;
+$medium-screen: 768px;
+$large-screen: 992px;
+$extra-large-screen: 1200px;
 
 .hero-container {
     display: flex;
@@ -16,7 +20,6 @@ $light-blue-background: #eff4fe;
         flex-direction: column;
         align-items: flex-start;
         gap: 3em;
-
         h1 {
             font-size: 64px;
             width: 85%;
@@ -96,6 +99,60 @@ $light-blue-background: #eff4fe;
             height: 1em;
             left: 885px;
             top: 653px;
+        }
+    }
+}
+// smartphones
+@media screen and (max-width: 767px) {
+    .hero-container {
+        .left-container {
+        }
+        .right-container {
+            h1 {
+                width: 90%;
+                font-size: 4.5vw;
+            }
+            p {
+                font-size: 12px;
+            }
+            .hero-button {
+                padding: 2vw 3.5vw;
+            }
+        }
+    }
+}
+// Tablets
+@media screen and (min-width: #{$medium-screen}) and (max-width: #{$large-screen}) {
+    .hero-container {
+        .left-container {
+        }
+        .right-container {
+            h1 {
+                width: 90%;
+                font-size: 45px;
+            }
+            p {
+                font-size: 14px;
+            }
+            .hero-button {
+            }
+        }
+    }
+}
+
+@media screen and (min-width: #{$large-screen}) and (max-width: #{$extra-large-screen}) {
+    .hero-container {
+        .left-container {
+        }
+        .right-container {
+            h1 {
+                width: 95%;
+                font-size: 55px;
+            }
+            p {
+            }
+            .hero-button {
+            }
         }
     }
 }
