@@ -1,0 +1,382 @@
+$brand-color: #f86338;
+$darker-brand-color: #e3471c;
+$link-color: #11142d;
+$light-blue-background: #eff4fe;
+
+.cart-container {
+    .cart-main-container {
+        display: flex;
+        flex-direction: column;
+        background-color: $light-blue-background;
+        padding: 5em 10em 4em 10em;
+        .cart-process-top {
+            display: flex;
+            gap: 4em;
+            margin-top: 3em;
+            margin-bottom: 4em;
+            p {
+                font-size: 1.6em;
+                font-weight: 700;
+                color: #9a9ab0;
+            }
+            .current {
+                color: #11142d;
+            }
+        }
+        .cart-heading {
+            font-size: 4.8em;
+            font-weight: 700;
+            color: #11142d;
+        }
+        .cart-bottom {
+            display: flex;
+            gap: 10em;
+            margin-top: 6.6em;
+            .left-container {
+                width: 50%;
+                .cart-item {
+                    display: flex;
+                    gap: 4em;
+                    align-items: flex-start;
+                    margin-bottom: 4.5em;
+                    .cart-product-image {
+                        .image-box {
+                            width: 20em;
+                            height: 20em;
+                            background-color: #e2e2ea;
+                            border-radius: 0.4em;
+                        }
+                    }
+                    .product-details {
+                        display: flex;
+                        flex-direction: column;
+                        align-content: space-between;
+                        justify-content: space-between;
+                        width: 60%;
+                        .product-title {
+                            font-size: 2.4em;
+                            font-weight: 700;
+                            color: #11142d;
+                        }
+                        .product-size-details {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            .product-size-label {
+                                display: flex;
+                                align-items: center;
+                                width: 10em;
+                                justify-content: space-between;
+                                .label {
+                                    font-size: 1.6em;
+                                    font-weight: 700;
+                                    color: #11142d;
+                                }
+                                .color {
+                                    font-size: 1.6em;
+                                    font-weight: 700;
+                                    color: #11142d;
+                                }
+                            }
+                            .product-size-value {
+                                font-size: 1.6em;
+                                font-weight: 700;
+                                color: #11142d;
+                            }
+                        }
+                        .product-quantity-details {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            .product-quantity-label {
+                                display: flex;
+                                align-items: center;
+                                width: 10em;
+                                justify-content: space-between;
+                                .label {
+                                    font-size: 1.6em;
+                                    font-weight: 700;
+                                    color: #11142d;
+                                }
+                                .color {
+                                    font-size: 1.6em;
+                                    font-weight: 700;
+                                    color: #11142d;
+                                }
+                            }
+                            .product-quantity-buttons {
+                                display: flex;
+                                font-size: 1.6em;
+                                font-weight: 700;
+                                color: #11142d;
+                                gap: 0.8em;
+                            }
+                            .product-quantity-value {
+                            }
+                        }
+                        .product-bottom-details {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            .product-price {
+                                font-size: 6.2em;
+                                color: $brand-color;
+                                font-weight: 700;
+                                margin: 0;
+                                padding: 0;
+                            }
+                            .product-delete {
+                                display: flex;
+                                align-items: center;
+                                border: 2px solid $brand-color;
+                                padding: 0.6em;
+                                border-radius: 0.8em;
+                                img {
+                                    width: 2em;
+                                }
+                                &:hover {
+                                    cursor: pointer;
+                                    background-color: #ffe7e1;
+                                }
+                            }
+                            .product-wishlist {
+                                display: flex;
+                                align-content: flex-start;
+                                align-items: center;
+                                border: 2px solid $brand-color;
+                                border-radius: 0.8em;
+                                gap: 0.5em;
+                                padding: 0.7em 5px;
+                                p {
+                                    font-size: 12px;
+                                    margin: 0;
+                                    font-weight: 700;
+                                    color: $brand-color;
+                                }
+                                img {
+                                    width: 2em;
+                                }
+                                &:hover {
+                                    cursor: pointer;
+                                    background-color: #ffe7e1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .right-container {
+                width: 50%;
+                .coupon-container {
+                    background-color: #fff;
+                    padding: 2em 5em 2em 5em;
+                    border-radius: 0.8em;
+                    margin-bottom: 8em;
+                    .heading {
+                        font-size: 2.4em;
+                        font-weight: 700;
+                        color: #11142d;
+                    }
+                    .coupon-input {
+                        margin-top: 2em;
+                        input {
+                            width: 90%;
+                            border: 1px solid $brand-color;
+                            border-radius: 0.8em;
+                            padding: 1em 1.5em;
+                            background-color: transparent;
+                            &::placeholder {
+                                color: #9a9ab0;
+                            }
+                        }
+                    }
+                    .coupon-btn {
+                        background-color: $brand-color;
+                        padding: 1em 2em;
+                        color: #fff;
+                        border: none;
+                        border-radius: 0.8em;
+                        margin-top: 2.4em;
+                        &:hover {
+                            cursor: pointer;
+                            background-color: $darker-brand-color;
+                        }
+                    }
+                }
+                .cart-total {
+                    .cart-total-heading {
+                        font-size: 2.4em;
+                        font-weight: 700;
+                        color: #11142d;
+                        margin-bottom: 1.5em;
+                    }
+                }
+                .cart-details {
+                    display: flex;
+                    flex-direction: column;
+                    .cart-detail {
+                        display: flex;
+                        align-items: flex-start;
+                        margin-bottom: 2.4em;
+                        .cart-detail-label {
+                            font-size: 1.6em;
+                            font-weight: 700;
+                            color: #11142d;
+                            width: 10em;
+                        }
+                        .cart-detail-values-container {
+                            display: flex;
+                            flex-direction: column;
+                            .cart-detail-value {
+                                display: flex;
+                                align-items: flex-start;
+                                gap: 1em;
+                                justify-content: space-between;
+                                width: 50em;
+                                .inner-label {
+                                    font-size: 1.6em;
+                                    font-weight: 400;
+                                    color: #11142d;
+                                    margin: 0;
+                                    margin-bottom: 0.5em;
+                                }
+                                .change-state-btn {
+                                    background-color: transparent;
+                                    color: $brand-color;
+                                    border: none;
+                                    font-size: 1.6em;
+                                    font-weight: 700;
+                                }
+                            }
+                        }
+                    }
+                }
+                .checkout-button {
+                    background-color: $brand-color;
+                    padding: 1em 2em;
+                    color: #fff;
+                    border: none;
+                    border-radius: 0.8em;
+                    margin-top: 2.4em;
+                    text-align: center;
+                    font-weight: 700;
+                    font-size: 1.6em;
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $darker-brand-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .top-items-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 10em;
+        .top-items-title {
+            font-size: 4.8em;
+            margin: 100px 0 25px 0;
+        }
+        .top-items-sub-text {
+            font-size: 1.5em;
+            margin-bottom: 3em;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            font-weight: 400;
+            margin-top: 0;
+            span {
+                display: flex;
+            }
+        }
+        .top-items-cards-container {
+            display: inline-block;
+            width: 80%;
+            margin-left: 5%;
+            .slick-slider {
+                display: flex;
+                .slick-track {
+                    .slick-slide {
+                        .top-items-card {
+                            height: 451px;
+                            width: 650px;
+                            background-color: #e2e2ea;
+                            border-radius: 0.6em;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: space-between;
+                            justify-content: space-between;
+                            align-content: space-between;
+                            &:hover {
+                                cursor: pointer;
+                                background-color: #d6d6db;
+                            }
+                            .card-top-section {
+                                display: flex;
+                                align-items: flex-start;
+                                .sale-tag {
+                                    color: #e3471c;
+                                    padding: 0.5em;
+                                    font-size: 1.4em;
+                                    font-weight: 500;
+                                    margin: 1em;
+                                    background-color: #fff;
+                                    border-radius: 0.8em;
+                                    text-transform: uppercase;
+                                }
+                                .image-box {
+                                    width: 20em;
+                                    height: 33em;
+                                }
+                            }
+                            .card-bottom-section {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                gap: 0.8em;
+                                .product-heading {
+                                    font-size: 2.4em;
+                                    color: #11142d;
+                                    font-weight: 700;
+                                }
+                                .product-category {
+                                    font-size: 1.4em;
+                                    font-weight: 400;
+                                    color: #9a9ab0;
+                                }
+                                .product-price {
+                                    display: flex;
+                                    gap: 0.5em;
+                                    .price-now {
+                                        font-size: 1.6em;
+                                        font-weight: 500;
+                                        color: $brand-color;
+                                    }
+                                    .price-before {
+                                        font-size: 1.6em;
+                                        font-weight: 500;
+                                        color: #9a9ab0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .slick-dots {
+                    padding-top: 2em;
+                }
+            }
+
+            .slick-track {
+                display: flex;
+                gap: 1em;
+            }
+        }
+    }
+    .newsletter-wrap {
+        padding-top: 8em;
+    }
+}

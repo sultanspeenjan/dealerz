@@ -1,0 +1,91 @@
+$brand-color: #f86338;
+$darker-brand-color: #e3471c;
+$link-color: #11142d;
+$light-blue-background: #eff4fe;
+
+.footer-container {
+    display: flex;
+    padding: 6em 10em;
+    gap: 25em;
+    .left-container {
+        display: flex;
+        .box-container {
+            width: 360px;
+            height: 360px;
+            background-color: #e2e2ea;
+        }
+        .text-container {
+            padding-left: 5em;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .text-top {
+                h1 {
+                    font-size: 6.4em;
+                    font-weight: 700;
+                    margin: 0;
+                    color: $brand-color;
+                }
+                .button-wrap {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 3em;
+                    .privacy-link {
+                        text-decoration: none;
+                        margin-bottom: 1em;
+                        font-weight: 700;
+                        font-size: 1.6em;
+                        color: $link-color;
+                        &:hover {
+                            opacity: 0.7;
+                        }
+                        &:visited {
+                            color: $link-color;
+                        }
+                    }
+                    .terms-link {
+                        text-decoration: none;
+                        font-weight: 700;
+                        font-size: 1.6em;
+                        color: $link-color;
+                        &:hover {
+                            opacity: 0.7;
+                        }
+                        &:visited {
+                            color: $link-color;
+                        }
+                    }
+                }
+            }
+            p {
+                font-size: 1.6em;
+                font-weight: 700;
+            }
+        }
+    }
+    .right-container {
+        display: flex;
+        .socials {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.6em;
+            .social-links {
+                background-color: $brand-color;
+                width: 2em;
+                height: 2em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 1em;
+                border-radius: 50%;
+                text-decoration: none;
+                color: #fff;
+                font-size: 1.6em;
+                font-family: "Merriweather";
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}

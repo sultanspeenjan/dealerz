@@ -1,0 +1,101 @@
+$brand-color: #f86338;
+$darker-brand-color: #e3471c;
+$link-color: #11142d;
+$light-blue-background: #eff4fe;
+
+.hero-container {
+    display: flex;
+    height: 64em;
+    .left-container {
+        width: 50%;
+    }
+    .right-container {
+        width: 50%;
+        padding: 13.5em 0 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3em;
+
+        h1 {
+            font-size: 64px;
+            width: 85%;
+            padding: 0;
+            margin: 0;
+        }
+        p {
+            font-size: 1.6em;
+            width: 70%;
+        }
+        .hero-button {
+            background-color: $brand-color;
+            font-size: 1.6em;
+            border-radius: 8px;
+            border: none;
+            color: #fff;
+            padding: 18px 24px 18px 24px;
+            transition: all 0.3s ease;
+            &:hover {
+                background-color: $darker-brand-color;
+                cursor: pointer;
+                transform: translateY(-10px);
+                transition: all 0.3s ease;
+            }
+        }
+        .ellipse_blue_top_left {
+            position: absolute;
+            width: 10em;
+            height: 10em;
+            left: 68px;
+            top: 283.92px;
+        }
+        .ellipse_blue_right {
+            position: absolute;
+            width: 56.34px;
+            height: 56.34px;
+            left: 1227.88px;
+            top: 278px;
+        }
+        .ellipse_blue_bottom {
+            position: absolute;
+            width: 59.48px;
+            left: 648.89px;
+            top: 659px;
+        }
+        .ellipse_cir_top {
+            position: absolute;
+            width: 39px;
+            height: 39px;
+            left: 579px;
+            top: 289px;
+        }
+        .ellipse_cir_left {
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            left: 119px;
+            top: 669px;
+        }
+        .ellipse_cir_right {
+            position: absolute;
+            width: 1em;
+            height: 1em;
+            left: 1063px;
+            top: 803px;
+        }
+        .ellipse_cir_right_most {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            left: 1214px;
+            top: 592px;
+        }
+        .ellipse_cir_right_short {
+            position: absolute;
+            width: 1em;
+            height: 1em;
+            left: 885px;
+            top: 653px;
+        }
+    }
+}

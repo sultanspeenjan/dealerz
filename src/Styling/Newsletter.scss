@@ -1,0 +1,59 @@
+$brand-color: #f86338;
+$darker-brand-color: #e3471c;
+$link-color: #11142d;
+$light-blue-background: #eff4fe;
+
+.newsletter-container {
+    margin: 0 10rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    padding-bottom: 8em;
+    .newsletter-heading {
+        margin: 0;
+        font-size: 4.8em;
+        font-weight: 700;
+        margin-top: 90px;
+        text-transform: capitalize;
+    }
+    .newsletter-subtext {
+        margin-top: 30px;
+        font-size: 1.6em;
+        color: #9a9ab0;
+        width: 55%;
+        margin-bottom: 4em;
+        text-align: center;
+    }
+    .newsletter-email-input {
+        width: 70%;
+        border-radius: 0.8em;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.8em 0.5em 0.8em 3em;
+        background-color: #f4f7f8;
+        .newsletter-input {
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            &:focus {
+                outline: none;
+            }
+        }
+        .newsletter-input-btn {
+            background-color: $brand-color;
+            border-radius: 0.8em;
+            display: flex;
+            align-items: center;
+            padding: 1em;
+            img {
+                width: 24px;
+            }
+            &:hover {
+                cursor: pointer;
+                background-color: $darker-brand-color;
+            }
+        }
+    }
+}
