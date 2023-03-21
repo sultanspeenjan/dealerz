@@ -131,6 +131,41 @@ const Shop = () => {
                 <p className="featured-price">$100</p>
               </div>
             </div>
+            <div className="featured-item">
+              <div className="featured-box"></div>
+              <div className="featured-inner">
+                <p className="featured-title">Tropical Playsuit</p>
+                <p className="featured-price">$100</p>
+              </div>
+            </div>
+            <div className="featured-item">
+              <div className="featured-box"></div>
+              <div className="featured-inner">
+                <p className="featured-title">Tropical Playsuit</p>
+                <p className="featured-price">$100</p>
+              </div>
+            </div>
+            <div className="featured-item">
+              <div className="featured-box"></div>
+              <div className="featured-inner">
+                <p className="featured-title">Tropical Playsuit</p>
+                <p className="featured-price">$100</p>
+              </div>
+            </div>
+            <div className="featured-item">
+              <div className="featured-box"></div>
+              <div className="featured-inner">
+                <p className="featured-title">Tropical Playsuit</p>
+                <p className="featured-price">$100</p>
+              </div>
+            </div>
+            <div className="featured-item">
+              <div className="featured-box"></div>
+              <div className="featured-inner">
+                <p className="featured-title">Tropical Playsuit</p>
+                <p className="featured-price">$100</p>
+              </div>
+            </div>
           </div>
         </div>
         <div className="shop-product-cards-container">
